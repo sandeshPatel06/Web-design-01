@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - Island</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Island</a>
+            <ul>
+                <li><a href="tours.html">Our tours</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="booking.html" class="active">Booking</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="booking">
+        <h1>Book Your Tour</h1>
+        <form id="booking-form">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="tour">Select Tour:</label>
+                <select id="tour" name="tour" required>
+                    <option value="alone-nature">Alone with Nature - $100/person</option>
+                    <option value="jeep-ride">Jeep Ride - $200/person</option>
+                    <option value="hiking-tour">Hiking Tour - $150/person</option>
+                    <option value="corners-island">Corners of the Island - $220/person</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Choose a Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="guests">Number of Guests:</label>
+                <input type="number" id="guests" name="guests" min="1" value="1" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Book Now</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 Island. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Form Validation and Submission
+const bookingForm = document.getElementById('booking-form');
+
+bookingForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const tour = document.getElementById('tour').value;
+    const date = document.getElementById('date').value;
+    const guests = document.getElementById('guests').value;
+
+    // Basic validation
+    if (!name || !email || !tour || !date || !guests) {
+        alert('Please fill out all fields.');
+        return;
+    }
+
+    // Example logic: Display a confirmation alert (can be replaced with actual submission logic)
+    alert(`Thank you, ${name}! Your booking for the "${tour}" tour on ${date} for ${guests} guests has been received. We will contact you at ${email} shortly.`);
+
+    // Optionally, you can reset the form after successful submission
+    bookingForm.reset();
+});
+
+// Date Validation: Prevent past dates
+const dateInput = document.getElementById('date');
+const today = new Date().toISOString().split('T')[0];
+dateInput.setAttribute('min', today);
+
+// Number of Guests Validation: Ensure positive integer
+const guestsInput = document.getElementById('guests');
+guestsInput.addEventListener('input', function() {
+    if (this.value < 1) {
+        this.value = 1;
+    }
+});
+
+// Additional JavaScript functionality can be added as needed
+    </script>
+</body>
+</html>

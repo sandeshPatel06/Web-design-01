@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Island</title>
+    <link rel="stylesheet" href="faq.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Island</a>
+            <ul>
+                <li><a href="tours.html">Our tours</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="faq.html" class="active">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="faq">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq-item">
+            <button class="faq-question">What is included in the tour package?</button>
+            <div class="faq-answer">
+                <p>Each tour package includes transportation, a professional guide, and all entry fees. Meals and accommodation are provided where specified.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How can I book a tour?</button>
+            <div class="faq-answer">
+                <p>You can book a tour directly on our website by visiting the Booking page, selecting your preferred tour, and filling out the necessary details.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">What is the cancellation policy?</button>
+            <div class="faq-answer">
+                <p>We offer free cancellations up to 48 hours before the start of the tour. After that, a cancellation fee may apply.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Do you offer custom tours?</button>
+            <div class="faq-answer">
+                <p>Yes, we offer custom tours tailored to your preferences. Please contact us directly to discuss your requirements.</p>
+            </div>
+        </div>
+        <!-- Add more FAQ items as needed -->
+    </section>
+
+    <footer>
+        <p>© 2024 Island. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    question.addEventListener('click', () => {
+        const isOpen = answer.style.display === 'block';
+        
+        // Close all answers
+        document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+        
+        // Open the clicked one if it wasn't open already
+        if (!isOpen) {
+            answer.style.display = 'block';
+        }
+    });
+});
+
+// Optionally, you can expand this functionality to include animations, icons, etc.
+    </script>
+</body>
+</html>

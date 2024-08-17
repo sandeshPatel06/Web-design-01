@@ -1,0 +1,14 @@
+- project_folder/
+  - index.html
+  - about.html
+  - tours.html
+  - booking.html
+  - faq.html
+  - styles.css
+  - scripts.js
+  - images/
+      - background.jpg
+      - tour1.jpg
+      - tour2.jpg
+      - tour3.jpg
+      - tour4.jpg
